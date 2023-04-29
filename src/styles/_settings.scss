@@ -2,14 +2,10 @@
 
 $font-JetBrainsMono: monospace;
 
-$color-1: #052643;
-$color-2: #060d2e;
-$color-3: #0e1538;
-$color-4: rgba(38, 54, 109, 0.7);
-$white: #f5f5f5;
-
-$borderRadius: 25px;
-$shadow: 0 1px 3px #333;
+$background-color: #0f0f0f;
+$foreground-color: #f0f0f0;
+$border-radius: 25px;
+$border-size: 5px;
 
 @mixin verticalCenter {
   display: flex;
@@ -39,10 +35,10 @@ body {
   padding: 2rem 3rem;
   margin: 1rem auto;
   font-family: $font-JetBrainsMono;
-  background: linear-gradient(-45deg, $color-1, $color-2, $color-3, $color-1);
+  background: $background-color;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  color: $white;
+  color: $foreground-color;
   @media screen and (max-width: 1200px) {
     padding: 0.5rem;
   }
@@ -58,16 +54,16 @@ li {
 
 a {
   text-decoration: none;
-  color: $white;
+  color: $foreground-color;
   cursor: pointer;
 }
 
 a:visited {
-  color: $white;
+  color: $foreground-color;
 }
 
-.subtitle{
-  margin-top: 1rem;
-  font-size: 1.7em;
-  margin-left: 1.5rem;
-}
+//.subtitle {
+//  margin-top: 1rem;
+//  font-size: 1.7em;
+//  margin-left: 1.5rem;
+//}

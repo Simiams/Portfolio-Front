@@ -1,19 +1,30 @@
-import React, {Component} from 'react';
-import {NavLink} from "react-router-dom";
+import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 
 class ProjectCard extends Component {
+
+    handleHover = (event) => {
+        event.currentTarget.firstChild.style.opacity = 0;
+        event.currentTarget.lastChild.style.opacity = 1;
+        event.currentTarget.style.backgroundColor = "#f0f0f0";
+    }
+
+    handleLeave = (event) => {
+        event.currentTarget.firstChild.style.opacity = 1;
+        event.currentTarget.lastChild.style.opacity = 0;
+        event.currentTarget.style.backgroundColor = "#0f0f0f";
+    }
+
     render() {
-        let {name, image} = this.props.sector;
+        let project = this.props.project;
+        console.log(project)
+
         return (
-            <div className={"projectCard"}>
-                <NavLink exact to={"/Portfolio/" + name}>
-                    <img src={image} alt={name}/>
-                    <div className="content">
-                        <h2>{name}</h2>
-                        <p>En cours...</p>
-                    </div>
-                </NavLink>
-            </div>
+            <NavLink className={"projectCard"} exact to={"/Portfolio/" + project.name}
+                     onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}>
+                <img src={project.icon} alt={project.name} />
+                <h2 className="content">{project.name}</h2>
+            </NavLink>
         );
     }
 }

@@ -4,110 +4,133 @@ import Contact from "../components/home/Contact";
 import Experience from "../components/home/Experience";
 import TitleLine from "../components/all/TitleLine";
 import ProjectCard from "../components/home/ProjectCard";
-import axios from "axios";
-import {userData} from "../data/CV/user.data";
+import {getProfil} from "../services/User_SRV";
 
 class Home extends Component {
 
-    state = userData;
+    state = {profil: null};
 
-    getNewId = () => {
-        try {
-            axios({
-                method: "get",
-                url: `https://randomuser.me/api/`,
-            }).then((res) => {
-                let name = res.data.results[0].name.first;
-                let lastName = res.data.results[0].name.last;
-                let city = res.data.results[0].location.city;
-                let ddn = res.data.results[0].dob.date.split("T")[0];
-                let mail = res.data.results[0].email;
-                let phone = res.data.results[0].phone;
-                this.setState({
-                    name: name,
-                    lastName: lastName,
-                    ddn: ddn,
-                    mail: mail,
-                    phone: phone,
-                    city: city
-                })
-            }).catch((err) => {
-                console.log(err)
-            })
-        } catch (err) {
-            console.log(err);
-        }
+    componentDidMount() {
+        getProfil().then(profil => {
+            console.log(profil[0]);
+            this.setState({profil: profil[0]});
+        });
     }
-
-    displayActivityDomains = () => {
-        if (window.innerWidth <= 440){
-            return `[ ${this.state.domainsActivityShort.join("; ")} ]`
-        } else
-            return `[ ${this.state.domainsActivity.join("; ")} ]`
-    }
-
-
-
 
     render() {
-        let user = this.state;
-        return (
-            <div className={"home"}>
+
+        let profil = this.state.profil;
+
+        //TODO: To do in the back of application
+
+
+        if (profil == null) {
+            //TODO: Add loading component
+            return <div>Loading...</div>;
+        }
+
+        profil.competences = [{
+            "name": "caca", "startPractice": "pipi"
+        }, {
+            "name": "caca", "startPractice": "pipi"
+        }, {
+            "name": "caca", "startPractice": "pipi"
+        },{
+            "name": "caca", "startPractice": "pipi"
+        },{
+            "name": "caca", "startPractice": "pipi"
+        },{
+            "name": "caca", "startPractice": "pipi"
+        }];
+
+        profil.experiences = [{
+            "id": 4,
+            "job": "poste",
+            "startPeriod": "2001-01-18T00:00:00",
+            "endPeriod": "2023-04-12T00:00:00",
+            "description": "escription",
+            "url": "rl",
+            "company": "companu"
+        }]
+
+        let projects = [{
+            "id": 1,
+            "name": "infrastructure reeau",
+            "objectif": "objectif",
+            "icon": "/logo192.png",
+            "image": "favicon.ico",
+            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
+            "text": "cacacacacacacacacacacacacacacaca"
+        }, {
+            "id": 1,
+            "name": "infrastructure reeau",
+            "objectif": "objectif",
+            "icon": "/logo192.png",
+            "image": "favicon.ico",
+            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
+            "text": "cacacacacacacacacacacacacacacaca"
+        }, {
+            "id": 1,
+            "name": "infrastructure reeau",
+            "objectif": "objectif",
+            "icon": "/logo192.png",
+            "image": "favicon.ico",
+            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
+            "text": "cacacacacacacacacacacacacacacaca"
+        }, {
+            "id": 1,
+            "name": "infrastructure reeau",
+            "objectif": "objectif",
+            "icon": "/logo192.png",
+            "image": "favicon.ico",
+            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
+            "text": "cacacacacacacacacacacacacacacaca"
+        }]
+
+        return (<div className={"home"}>
+            <div>
                 <div className="top">
                     <div className="left">
-                        <Card user={user}/>
-                        <Contact user={user}/>
+                        <Card profil={profil}/>
+                        <Contact profil={profil}/>
                     </div>
                     <div className="right">
                         <div className="homeContent">
                             <div className="content">
-                                <h1 onClick={this.getNewId}>{user.name} {user.lastName}</h1>
-                                <h2>{this.displayActivityDomains()}</h2>
+                                <h1>{profil.name} {profil.lastName}</h1>
+                                <h2>{profil.job}</h2>
+
                                 <h3 className={"subtitle"}>Cherche</h3>
-                                <p> Une <strong>{user.searchFor.postTitle}</strong> pour <strong>la {user.searchFor.startDate}</strong></p>
+
+                                LOOKING FOR
+                                {/*TODO: Add user looking for in API and BDD*/}
+
                                 <h3 className={"subtitle"}>Profil</h3>
 
 
-                                <p>Bonjour, je m'appelle {user.name}. Je suis actuelemnt en {user.school.grade} à l'{user.school.name} ({user.school.fullname}) en double cursus BTS SIO (Service Informatique aux
-                                    organisations) sur {user.city}. </p>
-                                <p> {user.description} </p>
-                                <p> Ayant effectué mon précédent stage en tant que développeur C#, je vise, cette année,
-                                    l'univers du web et de la cybersécurité. </p>
+                                <p>{profil.description}</p>
 
                                 <h3 className={"subtitle"}>Experiences</h3>
                                 <div className="experiences">
 
-                                    {
-                                        user.experiences.map((exp) => {
-                                            return (
-                                                <Experience key={exp.id} exp={exp}/>
-                                            )
-                                        })
-                                    }
+                                    {profil.experiences.map((exp) => {
+                                        return (<Experience key={exp.id} experience={exp}/>)
+                                    })}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="container">
-                    <TitleLine
-                        title={"Portfolio"}
-                    />
+                    <TitleLine title={"Portfolio"}/>
                     <div className="contain">
-                        {
-                            user.sectors.map((sector) => {
-                                return (
-                                    <ProjectCard
-                                        key={sector.id}
-                                        sector={sector}
-                                    />
-                                )
-                            })
-                        }
+                        {projects.map((project) => {
+                            return (<ProjectCard key={project.id} project={project}/>)
+                        })}
                     </div>
                 </div>
             </div>
-        );
+        </div>);
     }
 }
 

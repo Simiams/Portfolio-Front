@@ -1,60 +1,28 @@
 .projectCard {
-  margin-top: 25px;
-  position: relative;
-  width: 320px;
-  height: auto;
-  padding: 0;
-  display: block;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 15%;
+  width: 280px;
+  height: 280px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease-out;
+
 
   img {
-    position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 100%;
     width: 100%;
+    border-radius: 100%;
+    opacity: 1;
+    transition: opacity 0.5s;
+
   }
 
   .content {
-    border-radius: 47%;
+    color: $background-color;
+    max-width: 240px;
+    font-size: 1.5rem;
     opacity: 0;
     position: absolute;
-    top: 0;
-    left: 0;
-    color: #1c87c9;
-    height: 100%;
-    width: 100%;
-    -webkit-transition: all 400ms ease-out;
-    -moz-transition: all 400ms ease-out;
-    -o-transition: all 400ms ease-out;
-    -ms-transition: all 400ms ease-out;
-    transition: all 400ms ease-out;
+    transition: opacity 1s;
     text-align: center;
-    background: linear-gradient(45deg, $color-4, $color-2);
-    margin-left: auto;
-    margin-right: auto;
-    &:hover{
-      opacity: 1;
-    }
-
-    h2 {
-      color: $white;
-      font-size: 3em;
-      padding: 5%;
-      vertical-align: center;
-      position: relative;
-      text-align: center;
-    }
-
-    p {
-      color: $white;
-      font-size: 2em;
-      padding: 5%;
-      vertical-align: center;
-      position: relative;
-      text-align: center;
-    }
   }
 }

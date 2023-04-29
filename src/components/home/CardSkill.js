@@ -20,8 +20,6 @@ class CardSkill extends Component {
                 <img src={image} alt={name + " logo"}/>
                 <span>{name}</span>
                 <span>{period} jours</span>
-
-
             </div>
         );
     }

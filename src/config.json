@@ -1,0 +1,9 @@
+{
+  "back": {
+    "url": "http://localhost:5000",
+    "profil": "http://localhost:5000/profil_API",
+    "competence": "http://localhost:5000/comptence_API",
+    "school": "http://localhost:5000/school_API"
+  },
+  "randomUser": "https://randomuser.me/api"
+}
