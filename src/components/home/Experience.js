@@ -6,45 +6,26 @@ class Experience extends Component {
         // const history = null;
         let {experience} = this.props;
 
-        experience.competences = [
-            //TODO: Do in back
-            "caca", "pipi"
-            ];
-
-        // function handleSubmit() {
-        //     window.location.href = '/Experience/' + post
-        //     fetch('/Experience/' + post, {
-        //         method: 'POST',
-        //         body: this.props.exp,
-        //     });
-        // }
-
+        experience.competences = [{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]
 
         return (
-            <div className={"experience"}>
+            <NavLink exact to={"Experience/" + experience.uri} className={"experience"}>
                     <div className="head">
                         <h3>{experience.job}</h3>
                         <h3>{experience.startPeriod}</h3>
                     </div>
+
                     <span className={"content"}>{experience.description}</span>
-                    <br/>
-                    <br/>
-                    <span className={"cac"}>Compétences travaillées: </span>
+                    <div className="competencesExperience">
                     {
                         experience.competences.map((competence, index) => {
-                            //TODO: faire en logique prcq la c'est de la merde
-                            let str;
-                           if (index < experience.competences.length - 1) {
-                               str = competence + ", ";
-                           }else{
-                               str = competence + ".";
-                           }
                             return (
-                                <span key={index}>{str}</span>
+                                <img className={"iconCompetenceExperience"} src={competence.icon} alt=""/>
                             )
                         })
                     }
-            </div>
+                    </div>
+            </NavLink>
         );
     }
 }

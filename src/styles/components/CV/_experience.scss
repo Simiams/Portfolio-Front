@@ -5,9 +5,10 @@
   padding: 20px;
   height: auto;
   border-radius: $border-radius;
-  border:$border-size solid $foreground-color ;
+  border: $border-size solid $foreground-color;
   text-decoration: none;
   font-size: 1rem;
+
   &:hover {
     background-color: $foreground-color;
     color: $background-color;
@@ -20,10 +21,22 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 0.7rem;
+    margin-bottom: 1rem;
   }
-  span{
-    font-size: 1.12rem;
+
+  .content {
+    margin: 1.5rem;
+  }
+
+  .competencesExperience {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .iconCompetenceExperience {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
