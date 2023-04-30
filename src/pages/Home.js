@@ -29,29 +29,7 @@ class Home extends Component {
             return <div>Loading...</div>;
         }
 
-        profil.competences = [{
-            "name": "caca", "startPractice": "pipi"
-        }, {
-            "name": "caca", "startPractice": "pipi"
-        }, {
-            "name": "caca", "startPractice": "pipi"
-        }, {
-            "name": "caca", "startPractice": "pipi"
-        }, {
-            "name": "caca", "startPractice": "pipi"
-        }, {
-            "name": "caca", "startPractice": "pipi"
-        }];
 
-        profil.experiences = [{
-            "id": 4,
-            "job": "poste",
-            "startPeriod": "2001-01-18T00:00:00",
-            "endPeriod": "2023-04-12T00:00:00",
-            "description": "escription",
-            "url": "rl",
-            "company": "companu"
-        }]
 
         let projects = [{
             "id": 1,

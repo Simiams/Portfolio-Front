@@ -6,7 +6,6 @@ class Experience extends Component {
         // const history = null;
         let {experience} = this.props;
 
-        experience.competences = [{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}, {"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"/logo192.png","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]
 
         return (
             <NavLink exact to={"Experience/" + experience.uri} className={"experience"}>
