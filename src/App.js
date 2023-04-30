@@ -4,15 +4,17 @@ import Project from "./pages/Project";
 import Experience from "./pages/Experience";
 
 function App() {
-  return (
-      <BrowserRouter>
+    return (
+        <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="Project/:project" element={<Project/>}/>
-                <Route path="Experience/:experience" element={<Experience/>}/>
+                {/*<Route path="/" element={<Home/>}/>*/}
+                <Route path="/:uri" element={<Home/>}/>
+                {/*<Route path="/profil/:id" element={<Home/>} />*/}
+                <Route path="/:uri/Project/:project" element={<Project/>}/>
+                <Route path="/:uri/Experience/:experience" element={<Experience/>}/>
             </Routes>
-      </BrowserRouter>
-  );
+        </BrowserRouter>
+    );
 }
 
-export default App; 
+export default App;

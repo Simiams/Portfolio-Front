@@ -1,9 +1,11 @@
 import axios from "axios";
 import config from "../config.json";
-
-
-export const getProfil = async (uri) => {
-    return axios.get(config.back.profil + "/" + uri)
+export const getExperienceByUriProfilAndUriExperience = async (idProfil, uri) => {
+    const data = {
+        idProfil: idProfil,
+        uriExperience: uri
+    };
+    return axios.post(config.back.experience, data)
         .then(response => {
             return response.data;
         })
