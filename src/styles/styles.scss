@@ -1,7 +1,7 @@
 @import './settings';
 @import "./pages/home";
 //@import "./pages/experience";
-//@import 'pages/project';
+@import 'pages/project';
 //
 @import "components/CV/card";
 //@import "components/CV/cardSkill";
@@ -10,5 +10,6 @@
 @import "components/CV/titleLine";
 @import "components/CV/line";
 @import "components/CV/projectCard";
+@import "components/all/cardSkill";
 //
 //@import 'components/all/buildingPage';

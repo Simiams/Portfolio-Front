@@ -5,8 +5,8 @@ class Line extends Component {
         let {background, height} = this.props;
         return (
             <div className={"line"} style={{
-                // background: background,
-                // height:  height
+                background: background,
+                height:  height
             }}>
             </div>
         );

@@ -20,7 +20,7 @@ class ProjectCard extends Component {
         console.log(project)
 
         return (
-            <NavLink className={"projectCard"} exact to={"/Portfolio/" + project.name}
+            <NavLink className={"projectCard"} exact to={"Project/" + project.uri}
                      onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}>
                 <img src={project.icon} alt={project.name} />
                 <h2 className="content">{project.name}</h2>

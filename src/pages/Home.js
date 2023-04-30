@@ -35,11 +35,11 @@ class Home extends Component {
             "name": "caca", "startPractice": "pipi"
         }, {
             "name": "caca", "startPractice": "pipi"
-        },{
+        }, {
             "name": "caca", "startPractice": "pipi"
-        },{
+        }, {
             "name": "caca", "startPractice": "pipi"
-        },{
+        }, {
             "name": "caca", "startPractice": "pipi"
         }];
 
@@ -55,36 +55,24 @@ class Home extends Component {
 
         let projects = [{
             "id": 1,
+            "uri": "short_uri_for_project1",
             "name": "infrastructure reeau",
-            "objectif": "objectif",
             "icon": "/logo192.png",
-            "image": "favicon.ico",
-            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
-            "text": "cacacacacacacacacacacacacacacaca"
         }, {
             "id": 1,
+            "uri": "short_uri_for_project2",
             "name": "infrastructure reeau",
-            "objectif": "objectif",
             "icon": "/logo192.png",
-            "image": "favicon.ico",
-            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
-            "text": "cacacacacacacacacacacacacacacaca"
         }, {
             "id": 1,
+            "uri": "short_uri_for_project3",
             "name": "infrastructure reeau",
-            "objectif": "objectif",
             "icon": "/logo192.png",
-            "image": "favicon.ico",
-            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
-            "text": "cacacacacacacacacacacacacacacaca"
         }, {
             "id": 1,
+            "uri": "short_uri_for_project4",
             "name": "infrastructure reeau",
-            "objectif": "objectif",
             "icon": "/logo192.png",
-            "image": "favicon.ico",
-            "description": "lorem ipsumipsumipsumipsumipsumipsumipsum ",
-            "text": "cacacacacacacacacacacacacacacaca"
         }]
 
         return (<div className={"home"}>
