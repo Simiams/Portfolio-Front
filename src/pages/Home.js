@@ -10,16 +10,17 @@ import {useParams} from "react-router-dom";
 import {matches} from "@testing-library/jest-dom/dist/utils";
 
 const Home = () => {
-    const {uri} = useParams();
+    let {uri} = useParams();
     const [profil, setProfil] = useState(null);
 
-    useEffect(() => {
 
+    useEffect(() => {
         getProfil(uri).then((p) => {
             console.log(p)
             setProfil(p);
         });
     }, [uri]);
+
 
     if (profil == null) {
         return <div>Loading...</div>;
