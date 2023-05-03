@@ -3,7 +3,7 @@ import CardSkill from "./CardSkill";
 import axios from "axios";
 import {getProfil} from "../../services/User_SRV";
 
-
+//TODO: Get profil for personnalise card
 class Card extends Component {
     // state = {cardInfoData: null}
     // changePdp = () => {
@@ -77,7 +77,7 @@ class Card extends Component {
                         <div className="image" style={{
                             background: `url(${"/bg.jpg"}) repeat scroll center`
                         }}>
-                            <img src={"/pokemon.png"} alt="profil pic" onClick={this.changePdp}/>
+                            <img src={profil.pdp} alt="profil pic" onClick={this.changePdp}/>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ class Card extends Component {
                                 return (
                                     <li>
                                         <div className={"cardSkill"}>
-                                            <img src={"/logo192.png"} alt={competence.name + " logo"}/>
+                                            <img src={competence.icon} alt={competence.name + " logo"}/>
                                             <span>{competence.name}</span>
                                             <span>{competence.startPractice}</span>
                                         </div>

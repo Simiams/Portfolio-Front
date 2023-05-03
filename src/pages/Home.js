@@ -9,7 +9,7 @@ import {getProfil} from "../services/User_SRV";
 import {useParams} from "react-router-dom";
 import {matches} from "@testing-library/jest-dom/dist/utils";
 
-const   Home = () => {
+const Home = () => {
     let {uri} = useParams();
     const [profil, setProfil] = useState(null);
 
@@ -23,7 +23,180 @@ const   Home = () => {
 
 
     if (profil == null) {
-        setProfil({"id":1,"name":"John","lastName":"Doe","pdp":"https://example.com/pdp1","ddn":"1990-01-01T00:00:00","mail":"john.doe@example.com","phone":"0123456789","city":"Paris","job":"Developer","currentSchool":null,"description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.","lookingFor":null,"uri":"caca","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}],"experiences":[{"id":4,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]},{"id":5,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[]},{"id":6,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]}],"projects":[{"id":1,"name":"BICE","uri":"BICE","icon":"\"caca\"","date":"2023-04-12T00:00:00","description":null,"pageHTML":null,"pageMarkDown":null,"idProfil":1,"competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]}]})
+        setProfil({
+            "id": 1,
+            "name": "Simon",
+            "lastName": "Convert",
+            "pdp": "pokemon.png",
+            "ddn": "26/11/2003",
+            "mail": "Simon.Convert@gmail.com",
+            "phone": "0763329647",
+            "city": "Nantes",
+            "job": "Developeur Web",
+            "currentSchool": "EPSI",
+            "description": "Bonjour, je m'appelle Simon. Je suis actuelemnt en 2eme années de bachelor à l'EPSI (Ecole Privée des Science Informatique) en double cursus BTS SIO (Service Informatique aux organisations) sur Nantes.\n" +
+                "Ce n'est que ma deuxiéme années et pourtant je commence a acquérir de solides bases dans le monde du numérique. Aussi bien en; Devellopement Web avec php, NodeJS, JS, et \"html\", qu'en Programmation Python, C# et C++ mais aussi en Infrastructure réseau. Passionné, je me forme de mon côté à la cybersécurité et les differents outils que nous offre Kali-Linux.\n" +
+                "Ayant effectué mon précédent stage en tant que développeur C#, je vise, cette année, l'univers du web et de la cybersécurité. ",
+            "lookingFor": "Alternance dés septembre 2021",
+            "uri": "SimonConvert",
+            "competences": [{
+                "id": 1,
+                "name": "nodeJs",
+                "description": "NodeJs",
+                "icon": "nodejs.png",
+                "startPractice": "2021",
+                "url": null
+            },{
+                "id": 2,
+                "name": "React",
+                "description": "React",
+                "icon": "react.png",
+                "startPractice": "2021",
+                "url": null
+            },{
+                "id": 3,
+                "name": "C#",
+                "description": "C",
+                "icon": "c-sharp.png",
+                "startPractice": "2020",
+                "url": null
+            },{
+                "id": 4,
+                "name": "JS",
+                "description": "JS",
+                "icon": "js.png",
+                "startPractice": "2020",
+                "url": null
+            },{
+                "id": 5,
+                "name": "Python",
+                "description": "Python",
+                "icon": "python.png",
+                "startPractice": "2019",
+                "url": null
+            },{
+                "id": 6,
+                "name": "Cybersécurité",
+                "description": "Cybersécurité",
+                "icon": "cyber-attack.png",
+                "startPractice": "2022",
+                "url": null
+            }],
+            "experiences": [{
+                "id": 1,
+                "job": "Developpeur C#",
+                "startPeriod": "05/2022",
+                "endPeriod": "06/2022",
+                "description": "Développement d'un convertisseur de fichier XAML",
+                "url": "rl",
+                "company": "STRAMATEL",
+                "uri": "DeveloppeurCSharp_Stramatel",
+                "competences": [{
+                    "id": 3,
+                    "name": "C#",
+                    "description": "C",
+                    "icon": "c-sharp.png",
+                    "startPractice": "2020",
+                    "url": null
+                },]
+            }, {
+                "id": 2,
+                "job": "Deeloppeur Web",
+                "startPeriod": "01/2022",
+                "endPeriod": "2023-04-12T00:00:00",
+                "description": "Développement d'un site web de e-commerce",
+                "url": null,
+                "company": "Trou Blanc",
+                "uri": "DeveloppeurWeb_Troublanc",
+                "competences": [{
+                    "id": 1,
+                    "name": "JS",
+                    "description": "C",
+                    "icon": "js.png",
+                    "startPractice": "2020",
+                    "url": null
+                },{
+                    "id": 2,
+                    "name": "JS",
+                    "description": "C",
+                    "icon": "php.png",
+                    "startPractice": "2020",
+                    "url": null
+                },{
+                    "id": 3,
+                    "name": "JS",
+                    "description": "C",
+                    "icon": "web.png",
+                    "startPractice": "2020",
+                    "url": null
+                },]
+            }, {
+                "id": 3,
+                "job": "Ramasseur de sel",
+                "startPeriod": "4ans",
+                "endPeriod": "2023-04-12T00:00:00",
+                "description": "Saisonnier dans une saline",
+                "url": "rl",
+                "company": "companu",
+                "uri": "RamasseurSel_Guerande",
+                "competences": [{
+                    "id": 2,
+                    "name": "valeur_Name",
+                    "description": "valeur_Description",
+                    "icon": "autonomie.png",
+                    "startPractice": "2023-02-12T00:00:00",
+                    "url": "valeur_url"
+                },{
+                    "id": 2,
+                    "name": "valeur_Name",
+                    "description": "valeur_Description",
+                    "icon": "evolution.png",
+                    "startPractice": "2023-02-12T00:00:00",
+                    "url": "valeur_url"
+                }, {
+                    "id": 2,
+                    "name": "valeur_Name",
+                    "description": "valeur_Description",
+                    "icon": "adaptabilité.png",
+                    "startPractice": "2023-02-12T00:00:00",
+                    "url": "valeur_url"
+                }]
+            }],
+            "projects": [{
+                "id": 1,
+                "name": "BICE",
+                "uri": "BICE",
+                "icon": "BICE.png",
+                "date": "2023-04-12T00:00:00",
+                "description": null,
+                "pageHTML": null,
+                "pageMarkDown": null,
+                "idProfil": 1,
+                "competences": []
+            }, {
+                "id": 2,
+                "name": "Admin Sys",
+                "uri": "Admin_Sys",
+                "icon": "reseau.png",
+                "date": "2023-04-12T00:00:00",
+                "description": null,
+                "pageHTML": null,
+                "pageMarkDown": null,
+                "idProfil": 1,
+                "competences": []
+            }, {
+                "id": 3,
+                "name": "Portfolio",
+                "uri": "Portfolio",
+                "icon": "portfolio.png",
+                "date": "2023-04-12T00:00:00",
+                "description": null,
+                "pageHTML": null,
+                "pageMarkDown": null,
+                "idProfil": 1,
+                "competences": []
+            }]
+        })
         return (<div>Chargement...</div>)
     }
 
@@ -42,9 +215,10 @@ const   Home = () => {
                                 <h2>{profil.job}</h2>
 
                                 <h3 className={"subtitle"}>Cherche</h3>
+                                <br/>
+                                <h3>{profil.lookingFor}</h3>
 
-                                LOOKING FOR
-                                {/*TODO: Add user looking for in API and BDD*/}
+                                <br/>
 
                                 <h3 className={"subtitle"}>Profil</h3>
 

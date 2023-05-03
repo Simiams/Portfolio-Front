@@ -12,7 +12,7 @@ function App() {
                 <Route path="/:uri" element={<Home/>}/>
                 {/*<Route path="/profil/:id" element={<Home/>} />*/}
                 <Route path="/:uri/Project/:project" element={<Project/>}/>
-                <Route path="/:uri/Experience/:experience" element={<Experience/>}/>
+                <Route path="/:uri/Experience/:experience_uri" element={<Experience/>}/>
             </Routes>
         </BrowserRouter>
     );
