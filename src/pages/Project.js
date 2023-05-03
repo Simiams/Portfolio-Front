@@ -13,49 +13,40 @@ const Project = () => {
         });
     }, [uri]);
 
-    // if (profil == null) {
-    //     return <div>Loading...</div>;
-    // }
 
-    return (
-        <div>
-            caca
+     return (
+        <div className={"project"}>
+
+            <TitleLine title={project.name}/>
+
+            <div className="cardProject">
+                <img className={"iconProject"} src={project.icon} alt=""/>
+                <div className={"description"}>
+                    <h3>{project.desccription}</h3>
+                    <p>{project.date}</p>
+                    <Line height={"5px"}/>
+                    <div className={"cardSkillProject"}>
+                        <ul>
+                            {/*{*/}
+                            {/*    project.competences.map((competence, index) => {*/}
+                            {/*        return (*/}
+                            {/*            <li>*/}
+                            {/*                <div className={"cardSkill"}>*/}
+                            {/*                    <img src={competence.icon} alt={competence.name + " logo"}/>*/}
+                            {/*                    <span>{competence.name}</span>*/}
+                            {/*                    <span>{competence.startPractice}</span>*/}
+                            {/*                </div>*/}
+                            {/*            </li>*/}
+                            {/*        )*/}
+                            {/*    })*/}
+                            {/*}*/}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="container" dangerouslySetInnerHTML={{__html: project.pageHTML}}/>
         </div>
-    )
-
-    //  return (
-    //     <div className={"project"}>
-    //
-    //         <TitleLine title={project.name}/>
-    //
-    //         <div className="cardProject">
-    //             <img className={"iconProject"} src={project.icon} alt=""/>
-    //             <div className={"description"}>
-    //                 <h3>{project.desccription}</h3>
-    //                 <p>{project.date}</p>
-    //                 <Line height={"5px"}/>
-    //                 <div className={"cardSkillProject"}>
-    //                     <ul>
-    //                         {
-    //                             project.competences.map((competence, index) => {
-    //                                 return (
-    //                                     <li>
-    //                                         <div className={"cardSkill"}>
-    //                                             <img src={competence.icon} alt={competence.name + " logo"}/>
-    //                                             <span>{competence.name}</span>
-    //                                             <span>{competence.startPractice}</span>
-    //                                         </div>
-    //                                     </li>
-    //                                 )
-    //                             })
-    //                         }
-    //                     </ul>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //         <div className="container" dangerouslySetInnerHTML={{__html: project.text}}/>
-    //     </div>
-    // );
+    );
 };
 
 export default Project;

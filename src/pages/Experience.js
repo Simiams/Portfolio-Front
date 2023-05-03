@@ -73,9 +73,43 @@ class Experience extends Component {
                 '<p>La page de statistiques était déjà existante mais n’était plus fonctionnelle dû à des évolutions du site, j’ai donc corrigé les dysfonctionnements de celle-ci.</p>\n',
         };
 
+return (
+    <div className={"experiencePage"}>
+        <TitleLine title={experience.job}/>
 
+        <div className="cardExperience">
+            <img className={"iconExperience"} src={experience.logo} alt=""/>
+            <div className={"description"}>
+                <a className={"companyNameExperience"} href={experience.url} target={"_blank"}>{experience.company}</a>
+                <h3>{experience.description}</h3>
+                <p>{experience.startPeriod}</p>
+                <Line height={"5px"}/>
+                <div className={"cardSkillExperience"}>
+                    <ul>
+                        {
+                            experience.competences.map((competence, index) => {
+                                return (
+                                    <li>
+                                        <div className={"cardSkill"}>
+                                            <img src={competence.icon} alt={competence.name + " logo"}/>
+                                            <span>{competence.name}</span>
+                                            <span>{competence.startPractice}</span>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div className="container" dangerouslySetInnerHTML={{__html: experience.text}}/>
+    </div>
+);
 
     }
+
+
 }
 
 export default Experience;

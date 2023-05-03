@@ -9,7 +9,7 @@ import {getProfil} from "../services/User_SRV";
 import {useParams} from "react-router-dom";
 import {matches} from "@testing-library/jest-dom/dist/utils";
 
-const Home = () => {
+const   Home = () => {
     let {uri} = useParams();
     const [profil, setProfil] = useState(null);
 
@@ -23,7 +23,8 @@ const Home = () => {
 
 
     if (profil == null) {
-        return <div>Loading...</div>;
+        setProfil({"id":1,"name":"John","lastName":"Doe","pdp":"https://example.com/pdp1","ddn":"1990-01-01T00:00:00","mail":"john.doe@example.com","phone":"0123456789","city":"Paris","job":"Developer","currentSchool":null,"description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.","lookingFor":null,"uri":"caca","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}],"experiences":[{"id":4,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]},{"id":5,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[]},{"id":6,"job":"poste","startPeriod":"2001-01-18T00:00:00","endPeriod":"2023-04-12T00:00:00","description":null,"url":"rl","company":"companu","competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]}],"projects":[{"id":1,"name":"BICE","uri":"BICE","icon":"\"caca\"","date":"2023-04-12T00:00:00","description":null,"pageHTML":null,"pageMarkDown":null,"idProfil":1,"competences":[{"id":2,"name":"valeur_Name","description":"valeur_Description","icon":"valeur_Icon","startPractice":"2023-02-12T00:00:00","url":"valeur_url"}]}]})
+        return (<div>Chargement...</div>)
     }
 
     return (

@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Experience from "./pages/Experience";
@@ -8,7 +8,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Landing_PGE/>}/>
+                <Route path="/" exact element={<Navigate to="/simonConvert" />}/>
                 <Route path="/:uri" element={<Home/>}/>
                 {/*<Route path="/profil/:id" element={<Home/>} />*/}
                 <Route path="/:uri/Project/:project" element={<Project/>}/>
