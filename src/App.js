@@ -9,9 +9,9 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Navigate to="/simonConvert" />}/>
-                <Route path="/:uri" element={<Home/>}/>
+                <Route path="/:uri" element={<Home/>}/> //TODO: rename uri to profil_uri
                 {/*<Route path="/profil/:id" element={<Home/>} />*/}
-                <Route path="/:uri/Project/:project" element={<Project/>}/>
+                <Route path="/:uri/Project/:project_uri" element={<Project/>}/>
                 <Route path="/:uri/Experience/:experience_uri" element={<Experience/>}/>
             </Routes>
         </BrowserRouter>

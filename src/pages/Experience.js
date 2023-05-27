@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom";
 
 const Experience = () => {
 
-    let {uri,experience_uri} = useParams();
+    let {uri, experience_uri} = useParams();
     let experience = {
         "id": 4,
         "job": "poste",
@@ -72,7 +72,7 @@ const Experience = () => {
             '<p>La page de statistiques était déjà existante mais n’était plus fonctionnelle dû à des évolutions du site, j’ai donc corrigé les dysfonctionnements de celle-ci.</p>\n',
     };
 
-    if (experience_uri.includes("DeveloppeurCSharp_Stramatel")){
+    if (experience_uri.includes("DeveloppeurCSharp_Stramatel")) {
         experience.job = "Développeur C#";
         experience.description = "Développement d'une application tierce à un logiciel de gestion de panneaux d'affichage";
         experience.company = "Stramatel";
@@ -90,7 +90,7 @@ const Experience = () => {
             },
             {
                 "id": 2,
-                "name": "XAML#",
+                "name": "XAML",
                 "description": "valeur_Description",
                 "icon": "/xaml.png",
                 "startPractice": "2022",
@@ -613,7 +613,7 @@ const Experience = () => {
             "icon": "/autonomie.png",
             "startPractice": "2020",
             "url": "valeur_url"
-        },{
+        }, {
             "id": 2,
             "name": "Progression",
             "description": "valeur_Description",
@@ -750,7 +750,7 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
-            <div className="container" dangerouslySetInnerHTML={{__html: experience.pageHTML}}/>
+            <div className="pageHTML" dangerouslySetInnerHTML={{__html: experience.pageHTML}}/>
         </div>
     );
 
